@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spline + Interactive Particles</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: black;
+    }
+
+    #spline-path-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      z-index: 0;
+    }
+
+    #cursor-circle {
+        position: fixed;
+        pointer-events: none;
+        width: 100px;
+        height: 100px;
+        border: 2px solid white;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+    }
+
+
+    canvas {
+        width: 100vw;
+        height: 100vh;
+        display: block;
+    }
+
+  </style>
+</head>
+<body>
+
+  <canvas id="spline-path-canvas" class="fill-div spline-path"></canvas>
+  <div id="cursor-circle"></div>
+
+  <!-- Import map -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three/examples/jsm/",
+        "jsm/": "https://unpkg.com/three/examples/jsm/"
+      }
+    }
+  </script>
+
+  <!-- Main entry script -->
+  <script type="module" src="/mainSpline.js"></script>
+
+</body>
+</html>

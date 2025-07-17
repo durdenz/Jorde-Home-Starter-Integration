@@ -1,0 +1,248 @@
+/* ------- Osmo [https://osmo.supply/] ------- */
+/* Osmo UI: https://slater.app/10324/23333.css */
+
+body {
+    cursor: url("https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb/671251b239d7aeb290a31ac5_cursor-default%402x.svg")
+        2 0,
+      auto;
+    background-image: url(/Images/Spray2.png);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    overflow: hidden;
+  }
+
+p{
+    font-size: 18px;
+    letter-spacing:0px;
+    font-family:'Roboto Mono', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  a,
+  button {
+    cursor: url("https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb/671251b212e6b71494aa67ff_cursor-pointer%402x.svg")
+        12 0,
+      pointer;
+  }
+
+  .gallery-titles a{
+    height: 0.7em;
+    letter-spacing: -8px;
+    font-family:'Open Sans', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    white-space: nowrap;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }
+  
+  .cloneable-2 {
+    padding: var(--container-padding);
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    display: flex;
+    position: relative;
+  }
+  
+  .looping-words {
+    height: 3.0em;
+    padding-left: .11em;
+    padding-right: .17em;
+    font-size: 11vw;
+    line-height: 1.02;
+    position: relative;
+  }
+  
+  .looping-words__list {
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-flow: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    position: relative;
+  }
+  
+  .looping-words__list.is--primary {
+    color: rgb(124, 252, 0);
+  }
+  
+  .looping-words__list.is--gray {
+    color: rgb(0, 0, 0);
+  }
+  
+  .looping-words__fade {
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+
+  
+  .looping-words__selector {
+    pointer-events: none;
+    width: 100%;
+    height: .9em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .looping-words__edge {
+    border-top: .095em solid rgb(124, 252, 0);
+    border-bottom: .095em solid rgb(124, 252, 0);
+    border-left: .095em solid rgb(124, 252, 0);
+    width: .195em;
+    height: 1.025em;
+    position: absolute;
+    margin-top: 0px;
+    top: 0;
+    left: 0;
+  }
+  
+  .looping-words__edge.is--2 {
+    inset: 0 0 0 auto;
+    transform: rotate(180deg);
+  }
+  
+  .looping-words__containers {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .looping-words__a {
+    margin: 0;
+  }
+
+  .gallerymenu-topblock {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    padding-top: 90px;
+  }
+
+  .gallerymenu-bottomblock {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    padding-bottom: 10%;
+  }
+
+  .data-text-look p{
+    font-size: 18px;
+    letter-spacing:0px;
+    font-family:'Roboto Mono', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .gallerymenu-topblock .line{
+    border-bottom: 2px solid rgb(0, 0, 0);
+    }
+
+    .gallerymenu-bottomblock .line{
+        border-bottom: 2px solid rgb(0, 0, 0);
+    }
+
+  /* For Image Hover Effect */
+    
+  #image-preview {
+    position: absolute;
+    top: 100px;
+    left: 300px;
+    width: 600px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: none;
+    z-index: -3;
+  }
+  
+  .hover-text {
+    rotate: 0deg;
+  }
+
+
+
+
+  /* For Mobile */
+@media screen and (max-width: 540px) {
+
+    .gallery-titles a{
+        height: 0.7em;
+        letter-spacing: -6px;
+        font-family:'Open Sans', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 700;
+        white-space: nowrap;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+      }
+
+    .looping-words {
+        height: 3.0em;
+        padding-left: .11em;
+        padding-right: .17em;
+        font-size: 3.5rem;
+        line-height: 1.02;
+        overflow: clip;
+      }
+
+      .gallerymenu-topblock {
+        width: 80%;
+        padding-top: 50%;
+      }
+
+      .gallerymenu-bottomblock {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        padding-bottom: 50%;
+      }
+
+      .cloneable-2 {
+        padding: var(--container-padding);
+        justify-content: center;
+        align-items: center;
+        min-height: 40vh;
+        display: flex;
+        position: relative;
+      }
+
+      .data-text-look p{
+        padding-top: 7px;
+        padding-bottom: 2px;
+        font-size: 8px;
+      }
+
+      .gallerymenu-topblock .line{
+        border-bottom: 1px solid rgb(0, 0, 0);
+        }
+    
+        .gallerymenu-bottomblock .line{
+            border-bottom: 1px solid rgb(0, 0, 0);
+        }
+
+}
+
+
+  /* For Extra Wide */
+@media screen and (min-width: 2000px) {
+
+    .looping-words {
+        height: 3.0em;
+        padding-left: .11em;
+        padding-right: .17em;
+        font-size: 13rem;
+        line-height: 1.02;
+      }
+  }

@@ -1,0 +1,357 @@
+
+html, body {
+    overflow-x: hidden;
+  }
+
+
+#about {
+    font-size: 11.3vi;
+    line-height: 100%;
+    letter-spacing: -6px;
+    color: rgb(255, 255, 255);
+  }
+
+#h-num {
+    font-size: 4.5vi;
+    font-family:'Roboto Mono', 'Arial Narrow', Arial, sans-serif;
+}
+
+#h-arrow {
+    font-size: 6.5vi;
+    margin-top: -3.5vi;
+    font-family:'Roboto Mono', 'Arial Narrow', Arial, sans-serif;
+}
+
+.text-column-2 {
+    column-count: 2;
+  
+    /* below properties are only for beautification purpose */  
+    column-gap: 50px;
+    text-align: justify;
+    padding: 10px;
+    min-height: 100px;
+    line-height: 1.3rem;
+  }
+
+  .about-head {
+      scale: 20px;
+  }
+
+  .h-contain {
+    width: 50vw;
+    position: absolute;
+}
+
+.about-space {
+    height: 67vh; 
+}
+
+.about-name-logo {
+    justify-content: left;
+}
+
+.about-name-logo h1{
+    color: rgb(255, 255, 255);
+}
+
+.about-name {
+    font-size: 1rem;
+    margin-top: -5px;
+    width: auto; 
+    height: 90px; 
+    display: inline-grid;
+}
+
+.about-logo-mark {
+    width: 90px;
+    height: 90px;
+}
+
+.about-logo-text {
+    height: 90px;
+    max-width: 600px;
+}
+
+.about-lower-accent-text {
+    font-size: 12px;
+    height: 40px;
+    width: 200px;
+    display: inline-grid;
+    margin-bottom: 10px;
+}
+
+.about-lower-accent-elements1 {
+    padding-bottom: 45px;
+    width: 50%;
+}
+
+.about-lower-accent-elements2 {
+    position: absolute;
+    /* bottom:0; */
+    font-family:'Roboto Mono', 'Arial Narrow', Arial, sans-serif;
+}
+
+.reverse {
+    display: flex;
+}
+
+.bar {
+    max-width: 450px;
+}
+
+
+.left-load .char,
+.right-load .char {
+  display: inline-block;
+  opacity: 0;
+  will-change: transform, opacity, filter, color;
+}
+
+.line-left {
+    margin-top:100px;
+    margin-bottom:-50px;
+    position: relative;
+    top: 0%;
+    left: 50%;
+    width: 25%;
+    height: 2px;
+    background-color: #000;
+    transform: translate(-100%, -50%);
+  }
+
+.line-right {
+    margin-top:100px; 
+    margin-bottom:-50px; 
+    position: relative;  
+    top: 0%;  
+    left: 50%;  
+    width: 25%;  
+    height: 2px;  
+    background-color: #000;  
+    transform: translate(0%);
+  }
+
+
+/* For Mobile */
+@media screen and (max-width: 540px) {
+
+    #about {
+        font-size: 22.3vi;
+        line-height: 100%;
+        margin-right: 19px;
+      }
+    
+    #h-num {
+        font-size: 9.1vi;
+    }
+    
+    #h-arrow {
+        font-size: 11.9vi;
+        margin-top: -7vi;
+    }
+
+    .h-contain {
+        width: 100%;
+        position: relative;
+    }
+
+    .about-space {
+        height: 44vh; 
+    }
+
+    .about-logo-mark {
+        width: 79px;
+        height: 79px;
+        margin-top: -5px;
+        margin-right: -10px;
+        margin-left: -15px;
+    }
+
+    .about-name-logo {
+        justify-content: center;
+    }
+
+    .about-logo-text {
+        height: 0px;
+        width: 0px;
+    }
+
+    .about-name {
+        font-size: 1rem;
+        margin-top: -5px;
+        width: auto; 
+        height: 70px; 
+        display: inline-grid;
+    }
+
+    .about-space {
+        height: 34vh; 
+    }
+
+    .about-upper-accent-text {
+        font-size: 9px;
+    }
+    
+
+    .about-lower-accent-text {
+        font-size: 9px;
+        padding-top: 10px;
+        width: 100%;
+        height: 30px;
+        display: inline-grid;
+        margin-bottom: 15px;
+    }
+
+    .about-lower-accent-elements1 {
+        height: 30px;
+        margin-bottom: 80px;
+        width: 50%;
+    }
+
+    .about-lower-accent-elements2 {
+        margin-bottom: 15px;
+    }
+
+    .reverse {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .bar {
+        max-width: 450px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .line-left {
+        width: 0%;
+      }
+    
+    .line-right { 
+        width: 0%;  
+      }
+
+}
+
+
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 990px) {
+
+    #about {
+        font-size: 22.3vi;
+        line-height: 100%;
+      }
+    
+    #h-num {
+        font-size: 9.1vi;
+    }
+    
+    #h-arrow {
+        font-size: 12.9vi;
+        margin-top: -7vi;
+    }
+    
+    .h-contain {
+        width: 100%;
+        position: relative;
+    }
+
+    .about-name {
+        margin-top: -10px;
+        width: auto; 
+        height: 7vh; 
+        display: inline-grid;
+    }
+
+    .about-space {
+        height: 45vh; 
+    }
+    
+    .about-logo-mark {
+        width: 7vh;
+    }
+
+    .about-name-logo {
+        justify-content: center;
+    }
+
+    .about-logo-text {
+        height: 0px;
+        width: 0px;
+    }
+
+    .about-upper-accent-text {
+        font-size: 9px;
+    }
+
+    .about-lower-accent-text {
+        font-size: 9px;
+        padding-top: 10px;
+        width: 100%;
+        height: 30px;
+    }
+
+    .about-lower-accent-elements2 {
+        position: absolute;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    .about-lower-accent-elements1 {
+        height: 60px;
+        margin-bottom: 0px;
+    }
+
+    .reverse {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .bar {
+        max-width: 350px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+}
+
+
+@media screen and (min-width: 1300px) {
+.top-row{
+    height: 200px;
+  }
+
+  .about-space {
+    height: 60vh; 
+}
+
+}
+
+/* For Line thickness */
+@media screen and (min-width: 1575px) {
+
+#about {
+    font-size: 180px;
+    line-height: 100%;
+}
+
+#h-num {
+    font-size: 77px;
+}
+
+#h-arrow {
+    font-size: 108px;
+    margin-top: -62px;
+}
+
+.h-contain {
+    width: 800px;
+}
+
+.bar {
+    max-width: 450px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+}

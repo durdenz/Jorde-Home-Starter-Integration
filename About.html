@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en" class="h-100">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Nothing is better than a good design a great time.">
+        <meta name="author" content="Jorde Durden">
+        <meta name="generator" content="Jorde Durden">
+        <title>Durdy Design Creative Studio</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+        <!-- Custom styles for this template -->
+        <link href="./css/cover.css" rel="stylesheet">
+        <link href="./StyleAbout.css" rel="stylesheet">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    </head>
+
+<body>
+    <div id="xHeader"> <!-- G4 071125 - Debug Width Issue -->
+    <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
+    </div>
+
+    <header class="mb-auto head-nav" style="mix-blend-mode: exclusion;">
+        <div class="row">
+            <div class="col-sm-4 col-8">
+                <svg class="logo-invert" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 291.08 37.64">
+                    <path class="logo-color" d="M49.82,22.67c0,3.66-1.52,5.3-4.94,5.3-3.7,0-5.42-1.68-5.42-5.3V1.93h-8.8V13.11C29.05,5.86,23.62,1.93,14.96,1.93H2.66V27.29H11.46V10.13h3.9c4.21,0,7.02,1.43,7.02,8.42,0,5.88-2.32,8.74-7.1,8.74h-3.82v8.2h3.5c6.37,0,13.79-2.25,15.73-12.09h0c.28,8.24,5.29,12.77,14.19,12.77s13.74-5.05,13.74-13.5V1.93h-8.8V22.67Z"/>
+                    <path class="logo-color" d="M99.4,1.93h-12.3V31.17c-.65-1.03-.76-2.85-.86-4.62-.03-.56-.06-1.11-.12-1.69-.13-1.33-.38-3.8-1.98-5.7,1.72-1.77,2.67-4.27,2.67-7.25,0-5.97-4.49-9.98-11.18-9.98h-15.94V35.49h8.8v-12.2h6.78c1.44,0,1.87,.13,2.28,3.01l.02,.14c.18,.92,.22,1.96,.25,2.96,.07,2.01,.13,3.92,1.41,5.3l.74,.8h19.41c7.4,0,16.22-3.03,16.22-17.46,0-10.38-5.76-16.1-16.22-16.1Zm-25.48,13.16h-5.42v-4.96h6.94c1.88,0,2.58,.65,2.58,2.38,0,1.27,0,2.58-4.1,2.58Zm25.8,12.2h-3.82V10.13h3.9c4.21,0,7.02,1.43,7.02,8.42,0,5.88-2.32,8.74-7.1,8.74Z"/>
+                    <path class="logo-color" d="M278.82,1.89v15.82l-10.49-15.82h-8.67V10.26c-2.02-5.78-7.19-9.04-14.55-9.04s-13.4,4.38-15.6,11.38V1.89h-9.8V12.31c-.54-6.86-5.65-11.09-13.48-11.09-4.9,0-9,1.8-11.32,4.9V1.89h-25.72V11.5c-2.1-6.24-7.5-9.61-15.72-9.61l-18.72,.04-6.99,11.36-7.15-11.36h-10.52l13.16,20.12v13.43h8.8v-13.44l8.62-13.33V27.72h8.8v8.03h4c6.11,0,13.16-1.97,15.72-10.22v10.22h25.84v-3.83c2.62,2.91,6.74,4.49,11.76,4.49s10.53-1.98,12.92-6.33v5.67h9.8v-10.48c2.08,6.07,7.4,11.14,15.6,11.14,2.75,0,5.34-.64,7.54-1.86l.34,1.2h16.26v-15.6l10.38,15.6h8.78V1.89h-9.6Zm-125.34,32.85h-3v-7.03h3.32c5.04,0,7.6-3.05,7.6-9.06,0-7.68-3.61-8.74-7.52-8.74h-4.4V26.72h-7.8V7.17l2.77-4.28h9.03c10.14,0,15.72,5.42,15.72,15.26,0,13.71-8.55,16.59-15.72,16.59Zm-3-8.03V10.92h3.4c4.02,0,6.52,1.29,6.52,7.74,0,5.5-2.1,8.06-6.6,8.06h-3.32Zm69.25,.47c-1.2,5.68-7.36,8.23-12.93,8.23s-9.52-1.85-11.85-5.21l-.91-1.32v5.86h-23.84V2.89h23.72v7.03h-15.92v4.99h14.84v6.73h7.76v1.95c0,3,2.36,4.79,6.32,4.79,3.48,0,5.24-1.06,5.24-3.14,0-1.8-2.11-2.44-6.58-3.37l-.98-.21c-.95-.2-2.14-.46-3.36-.84l-.46-.15c-4.65-1.56-6.91-4.28-6.91-8.32,0-.59,.06-1.2,.18-1.85l.11-.59h-.21l.91-1.81c1.85-3.68,6.1-5.88,11.37-5.88,7.46,0,12.26,4.11,12.52,10.72l.08,2.02h-7.47l-.19-1.74c-.2-1.85-.97-3.98-5.09-3.98-2.96,0-4.4,.93-4.4,2.83,0,1.38,2.27,1.95,6.01,2.73,.52,.11,1.06,.22,1.62,.35,.41,.09,.9,.2,1.43,.33l.7,.18h0s.86,.27,.86,.27c4.28,1.39,6.71,3.69,7.43,7.03l.45,2.08-.45,2.13Zm-25.89-10.54c.85,1.65,2.27,2.98,4.28,4.01h-4.28v-4.01Zm-.85-2.73h-13.99v-2.99h13.98c-.07,.49-.1,.97-.1,1.44,0,.54,.04,1.06,.11,1.56Zm8.61,9.68v-1.63c1.02,.29,1.99,.5,2.8,.67l.98,.21c3.92,.82,5.78,1.39,5.78,2.39,0,.59,0,2.14-4.24,2.14-1.99,0-5.32-.49-5.32-3.79Zm18.12-7.62v4.18c-.98-1.73-2.55-3.12-4.69-4.18h4.69Zm-9.43-1.61c-.28-.06-.54-.12-.79-.18-.54-.12-1.07-.23-1.6-.34-1.56-.33-5.22-1.09-5.22-1.76,0-.55,0-1.83,3.4-1.83s3.93,1.59,4.1,3.09l.11,1.02Zm18.23,20.38h-7.8V2.89h7.8v31.85Zm31.15,0h-5.91l-.5-1.73-.56,.35c-2.16,1.34-4.78,2.04-7.58,2.04-10.13,0-15.6-8.27-15.6-16.04,0-10.25,6.27-17.14,15.6-17.14,7.91,0,13.11,3.98,14.25,10.91l.1,.7h-7.84v-.04c-.53-2.92-2.84-4.54-6.51-4.54-7.23,0-7.8,7.59-7.8,9.92,0,4.58,2.41,9.21,7.8,9.21,2.24,0,4.11-.7,5.39-2.01,.69-.71,1.19-1.57,1.48-2.57l.19-.64h-9.02v-7.03h16.51s0,18.62,0,18.62Zm0-19.63l-17.51,.02v9.03h8.64c-.25,.57-.59,1.08-1.01,1.52-1.09,1.12-2.71,1.71-4.67,1.71-4.7,0-6.8-4.12-6.8-8.21,0-2.09,.49-8.92,6.8-8.92,3.22,0,5.08,1.25,5.52,3.68l.11,.89h8.92v.28Zm27.76,19.63h-7.25l-11.91-17.91v17.91h-7.59V15.11s0-12.22,0-12.22h7.13l12.03,18.13V2.89h7.6v31.85Z"/>
+                    <path class="logo-color" d="M193,23.59v-1.65h-15v5.78h15.66l-.18-.64c-.32-1.11-.48-2.28-.48-3.48Zm-14,3.12v-3.78h13v.65c0,1.07,.12,2.11,.35,3.12h-13.35Z"/>
+                </svg>
+            </div>
+
+            <div class="col-sm-4 col-2 justify-content-center logo">
+                <img
+                    src="Images/DurdyLogo.svg"
+                    alt="triangle with all three sides equal"
+                    height="40"/>
+            </div>
+        </div>
+    </header>
+    <header class="mb-auto head-nav">
+        <div class="row">
+            <!-- <div class="col-12" id="hamburger">
+                <div class="float-end">
+                    <canvas id="dlBtn1" width="50" height="50"></canvas>
+                </div>
+            </div> -->
+            <!-- G5 Added 053125 START -->
+            <div class="menu-bar">
+                <div id="box-nav-menu" class="row box-nav-close" style="padding-top:40px;">
+
+                    <div class="row col-12 d-flex">
+                    
+                        <div class="col-12 align-top menu-section-text">
+                            <p>&#128900; EXPLORE</p>
+                        </div>
+
+                        <div class="col-12 nav-text-lg align-top" style="height:800px">
+                            <div class="dclip-active justify-content-between" style="
+                            width: 300px;
+                            height: 75px;
+                            clip-path: polygon(90% 0%, 100% 42%, 100% 100%, 0% 100%, 0% 0%);">
+                            <h1 class="scramble-hover" data-text="HOME">HOME</h1>
+                            <div class="menu-page-text"> <span>page<br>001&#x1F865;</span> </div>
+                            </div>
+        
+                            <div class="dclip justify-content-between"  style="
+                            width: 570px;
+                            height: 75px;
+                            clip-path: polygon(95% 0%, 100% 42%, 100% 100%, 0% 100%, 0% 0%);">
+                            <h1 class="scramble-hover" data-text="CASE STUDIES">CASE STUDIES</h1>
+                            <div class="menu-page-text"> <span>page<br>002&#x1F865;</span> </div>
+                            </div>
+        
+                            <div class="dclip justify-content-between" style="
+                            width: 460px;
+                            height: 75px;
+                            clip-path: polygon(93.33% 0%, 100% 42%, 100% 100%, 0% 100%, 0% 0%);">
+                            <h1 class="scramble-hover" data-text="GALLERIES">GALLERIES</h1>
+                            <div class="menu-page-text"> <span>page<br>003&#x1F865;</span> </div>
+                            </div>
+        
+                            <div class="dclip justify-content-between" style="
+                            width: 340px;
+                            height: 75px;
+                            clip-path: polygon(91.43% 0%, 100% 42%, 100% 100%, 0% 100%, 0% 0%);">
+                            <h1 class="scramble-hover" data-text="ABOUT">ABOUT</h1>
+                            <div class="menu-page-text"> <span>page<br>004&#x1F865;</span> </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- G5 Added 053125 END -->
+
+                    <div class="row border d-flex align-content-center menu-section-text">
+                        <div class="col-3 align-top">
+                            <p>&#128900; CONNECT</p>
+                        </div>
+                        <div class="col-9 align-top">
+                            <p>Instagram</p>
+                            <p>LinkedIn</p>
+                            <p>Twitter</p>
+                        </div>
+                    </div>
+
+                    <div class="row border d-flex align-content-center menu-section-text">
+                        <div class="col-3 align-top">
+                            <p>&#128900; WATCH MORE</p>
+                        </div>
+                        <div class="col-9 align-top">
+                            <p>&#x2BC8; YouTube</p>
+                        </div>
+                    </div>
+
+                    <div class="row border d-flex align-items-center menu-section-text">
+                        <p>©2025 Durdy Design | Jorde Durden</p>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="mb-auto head-nav" style="mix-blend-mode: exclusion;">
+        <div class="row">  
+            <div class="col-12" id="hamburger">
+                <div class="float-end">
+                    <canvas id="dlBtn1" width="50" height="50"></canvas>
+                </div>
+            </div>
+        </div>
+    </header>
+    </div> <!-- #xHeader -- G4 071125 - Debug Width Issue -->
+    
+    
+    
+    
+    
+    <main class="main">
+
+        <div id="particle" class="" style="z-index: -3; position: absolute;"> 
+        </div>
+
+
+    <!-- G5 Added 053125  -->
+    <!-- G4 061125 - Added id="designTree" -->
+    <section id="designTree" class="section-about" style="padding-top: 3rem; height: 100vh; color: rgb(255, 255, 255); mix-blend-mode: exclusion; overflow: clip;">
+
+        <div class="row d-flex" style="height: 100%;">
+
+            <div class="row justify-content-between" style="height: auto"> 
+                
+                <div class="h-contain size-up-load" style="display: flex; flex-wrap: nowrap;">
+                    <h1 id="about" class="reveal-type4" style="width: 85%; margin-top:13px;">ABOUT</h1>
+                    <div class="" style="display: inline-grid; width: 10%;">
+                        <span id="h-num">01</span>
+                        <span id="h-arrow">&#x1F866;</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div>
+            <div class="about-head fill-div" style="display: flex; flex-wrap: nowrap; width: 950px;">
+                <h1 class="" style="width: 85%; font-size: 225px; margin-top: -33px;">ABOUT</h1>
+                <div class="" style="display: inline-grid; width: 10%;">
+                    <span id="" style="font-size: 90px;">01</span>
+                    <span id="" style="font-size: 117px; margin-top:-70px;">&#x1F866;</span>
+                </div>
+            </div>
+            </div> -->
+
+            <div class="row flex-row-reverse top-row" style="  align-content: center;"> 
+
+                <div class="col-lg-4 text-column-2 text-block-animate2" style="height: auto;" >
+                    Lorem ipsum dolor sit amet, consecteed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.
+                </div>
+
+            </div>
+
+            <div class="row justify-content-center" style="height: 40px; align-items: center;"> 
+                <div class="col-sm-3 row justify-content-center" style="height: 30px; margin-top: 10px; align-items: center;">
+                    <span class="" style="width: 200px;"><?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.22 7.13"><defs>
+                        <style>.cls-1{fill:none;stroke:rgb(255, 255, 255);stroke-miterlimit:10;stroke-width:.25px;}</style>
+                        </defs><line 
+                        class="cls-1" x1="1.73" y1="1.62" x2="1.73" y2="5.51"/><line 
+                        class="cls-1" x1="6.21" y1="1.62" x2="6.21" y2="3.83"/><line 
+                        class="cls-1" x1="10.68" y1="1.62" x2="10.68" y2="3.83"/><line 
+                        class="cls-1" x1="15.16" y1="1.62" x2="15.16" y2="3.83"/><line 
+                        class="cls-1" x1="19.63" y1="1.62" x2="19.63" y2="3.83"/><line 
+                        class="cls-1" x1="24.11" y1="1.62" x2="24.11" y2="5.51"/><line 
+                        class="cls-1" x1="28.59" y1="1.62" x2="28.59" y2="3.83"/><line 
+                        class="cls-1" x1="33.06" y1="1.62" x2="33.06" y2="3.83"/><line 
+                        class="cls-1" x1="37.54" y1="1.62" x2="37.54" y2="3.83"/><line 
+                        class="cls-1" x1="42.01" y1="1.62" x2="42.01" y2="3.83"/><line 
+                        class="cls-1" x1="46.49" y1="1.62" x2="46.49" y2="5.51"/></svg>
+                    </span>
+                </div>
+            </div>
+
+            <div class="row justify-content-between about-upper-accent-text" style="height: 50px;"> 
+                <div class="col-6 row">
+                    <span class="col-sm-3 left-load" style="white-space: pre;">[[                EXT.001                ]]</span>
+                </div> 
+                <div class="col-6 row about-upper-accent-text" style="text-align: right; justify-content: flex-end;">
+                    <span id="cursor-x" class="col-1 col-sm-2 right-load" style="white-space: pre;">[     00.00     ]</span>
+                    <span id="cursor-y" class="col-1 col-sm-2 right-load" style="white-space: pre;">[     00.00     ]</span>
+                </div>
+            </div>
+
+            <div class="row justify-content-between about-space" style="align-items: center;"> 
+                <div class="" style="width: 50px;">
+                    <span>+</span>
+                </div> 
+                <div class="" style="width: 50px;">
+                    <span>+</span>
+                </div> 
+            </div>
+
+
+            <div class="row justify-content-between" style="height: 90px; margin-bottom: 6rem;"> 
+                <div class="col-lg-6 row about-name-logo left-load">
+                    
+                    <div class="about-logo-mark">
+                        <?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.35 12.36"><defs>
+                            <style>.cls-2{fill:rgb(255, 255, 255);}</style></defs>
+                            <path class="cls-2" d="M12.11,7.89c-.04,.14-.04,.14-.16,.05-.77-.58-1.55-1.15-2.32-1.73-.11-.08-.11-.08,0-.17,.67-.49,1.34-.98,2-1.47,.04-.03,.08-.04,.1-.09h0s-.07-.01-.1-.01c-1.71,0-3.41,0-5.12,0-.1,0-.15,.05-.15,.16v2.93c0,.14,0,.14,.14,.14,.31,0,.62,0,.92,0,.1,0,.13-.03,.13-.12,0-.7,0-1.4,0-2.1,0-.15,0-.15,.15-.15,.39,0,.78,0,1.18,0,.03,0,.07-.01,.1,.02-.01,.05-.06,.06-.09,.08-.3,.22-.59,.44-.89,.65-.1,.07-.1,.07,0,.14,1.14,.84,2.27,1.68,3.41,2.52,.04,.03,.08,.06,.12,.1,.16,.13,.17,.13,.07,.3-.92,1.65-2.3,2.71-4.15,3.09-2.07,.42-3.92-.09-5.49-1.53C.88,9.69,.25,8.44,.05,6.97c-.12-.85-.04-1.69,.19-2.52,0-.02,.01-.04,.02-.06,.02-.08,.05-.1,.12-.05,.17,.12,.35,.24,.53,.36,.61,.42,1.22,.83,1.83,1.25,.08,.05,.08,.11,0,.16-.67,.49-1.35,.99-2.02,1.48-.03,.02-.05,.04-.08,.06,.03,.03,.06,.02,.09,.02,1.7,0,3.39,0,5.09,0,.16,0,.16,0,.16-.15v-2.91c0-.09-.05-.14-.14-.14-.29,0-.59,0-.88,0-.14,0-.14,0-.14,.14,0,.69,0,1.39,0,2.08,0,.16,0,.16-.15,.16-.41,0-.82,0-1.23,0-.03,0-.07,.01-.09-.02-.02-.04,.03-.05,.06-.07,.31-.23,.62-.46,.93-.69,.09-.07,.09-.07,0-.14-1.1-.8-2.2-1.6-3.3-2.4-.08-.06-.15-.12-.24-.18-.07-.04-.07-.08-.04-.15,.22-.4,.48-.77,.78-1.12,.81-.91,1.8-1.56,2.98-1.87,2.12-.54,4.05-.13,5.72,1.3,1.09,.93,1.75,2.12,2.02,3.53,.18,.95,.13,1.9-.14,2.83Z"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="about-name">
+                        <h1 class="">JORDE DURDEN</h1>
+                        <span class="" style="margin-top: -25px;">DESIGNER / DEVELOPER</span>
+                    </div>
+                </div> 
+
+                <div class="col-md-6 row right-load" style="text-align: right; justify-content: flex-end;">
+                    <span class="about-logo-text"><?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 95.18 11.72"><defs>
+                        <style>.cls-3{fill:rgb(255, 255, 255);}</style></defs>
+                        <path class="cls-3" d="M15.71,7.14c0,1.22-.51,1.76-1.64,1.76-1.23,0-1.8-.56-1.8-1.76V.23h-2.93V3.96C8.79,1.54,6.98,.23,4.1,.23H0V8.68H2.93V2.97h1.3c1.4,0,2.34,.48,2.34,2.8,0,1.96-.77,2.91-2.36,2.91h-1.27v2.73h1.17c2.12,0,4.59-.75,5.24-4.03h0c.09,2.74,1.76,4.25,4.73,4.25s4.58-1.68,4.58-4.5V.23h-2.93V7.14Z"/>
+                        <path class="cls-3" d="M32.22,.23h-4.1V9.97c-.22-.34-.25-.95-.29-1.54-.01-.19-.02-.37-.04-.56-.04-.44-.13-1.27-.66-1.9,.57-.59,.89-1.42,.89-2.41,0-1.99-1.5-3.32-3.72-3.32h-5.31V11.41h2.93V7.35h2.26c.48,0,.62,.04,.76,1v.05c.07,.31,.08,.65,.09,.98,.02,.67,.04,1.3,.47,1.76l.25,.27h6.46c2.46,0,5.4-1.01,5.4-5.81,0-3.46-1.92-5.36-5.4-5.36Zm-8.49,4.38h-1.81v-1.65h2.31c.63,0,.86,.21,.86,.79,0,.42,0,.86-1.36,.86Zm8.59,4.06h-1.27V2.97h1.3c1.4,0,2.34,.48,2.34,2.8,0,1.96-.77,2.91-2.36,2.91Z"/>
+                        <path class="cls-3" d="M91.98,.22V5.49L88.48,.22h-2.89V3.01c-.67-1.93-2.39-3.01-4.85-3.01s-4.46,1.46-5.19,3.79V.22h-3.26V3.69c-.18-2.28-1.88-3.69-4.49-3.69-1.63,0-3,.6-3.77,1.63V.22h-8.57V3.42c-.7-2.08-2.5-3.2-5.24-3.2h-6.23s-2.33,3.8-2.33,3.8L39.29,.23h-3.5l4.38,6.7v4.47h2.93V6.93l2.87-4.44v6.33h2.93v2.67h1.33c2.04,0,4.38-.65,5.24-3.4v3.4h8.6v-1.28c.87,.97,2.24,1.5,3.92,1.5s3.51-.66,4.3-2.11v1.89h3.26v-3.49c.69,2.02,2.47,3.71,5.19,3.71,.92,0,1.78-.21,2.51-.62l.11,.4h5.42V6.3l3.46,5.2h2.93V.22h-3.2ZM50.23,11.16h-1v-2.34h1.11c1.68,0,2.53-1.01,2.53-3.02,0-2.56-1.2-2.91-2.5-2.91h-1.46v5.59h-2.6V1.98l.92-1.43h3.01c3.38,0,5.24,1.81,5.24,5.08,0,4.57-2.85,5.53-5.24,5.53Zm-1-2.67V3.23h1.13c1.34,0,2.17,.43,2.17,2.58,0,1.83-.7,2.68-2.2,2.68h-1.11Zm23.06,.16c-.4,1.89-2.45,2.74-4.31,2.74s-3.17-.62-3.95-1.74l-.3-.44v1.95h-7.94V.55h7.9V2.9h-5.3v1.66h4.94v2.24h2.59v.65c0,1,.79,1.59,2.1,1.59,1.16,0,1.75-.35,1.75-1.05,0-.6-.7-.81-2.19-1.12l-.32-.07c-.32-.07-.71-.15-1.12-.28l-.15-.05c-1.55-.52-2.3-1.43-2.3-2.77,0-.2,.02-.4,.06-.61l.04-.2h-.07l.3-.6c.62-1.23,2.03-1.96,3.79-1.96,2.49,0,4.08,1.37,4.17,3.57l.03,.67h-2.49l-.06-.58c-.07-.62-.32-1.32-1.7-1.32-.99,0-1.46,.31-1.46,.94,0,.46,.76,.65,2,.91,.17,.04,.35,.07,.54,.12,.14,.03,.3,.07,.47,.11l.23,.06h0s.29,.09,.29,.09c1.43,.46,2.24,1.23,2.48,2.34l.15,.69-.15,.71Zm-8.62-3.51c.28,.55,.76,.99,1.43,1.33h-1.43v-1.33Zm-.28-.91h-4.66v-1h4.66c-.02,.16-.03,.32-.03,.48,0,.18,.01,.35,.04,.52Zm2.87,3.22v-.54c.34,.1,.66,.17,.93,.22l.33,.07c1.3,.27,1.93,.46,1.93,.8,0,.2,0,.71-1.41,.71-.66,0-1.77-.16-1.77-1.26Zm6.04-2.54v1.39c-.33-.57-.85-1.04-1.56-1.39h1.56Zm-3.14-.54c-.09-.02-.18-.04-.26-.06-.18-.04-.36-.08-.53-.11-.52-.11-1.74-.36-1.74-.58,0-.18,0-.61,1.13-.61s1.31,.53,1.36,1.03l.04,.34Zm6.07,6.79h-2.6V.55h2.6V11.16Zm10.37,0h-1.97l-.17-.58-.19,.12c-.72,.45-1.59,.68-2.53,.68-3.37,0-5.19-2.75-5.19-5.34,0-3.41,2.09-5.71,5.19-5.71,2.64,0,4.37,1.33,4.75,3.63l.03,.23h-2.61c-.17-.99-.94-1.52-2.17-1.52-2.41,0-2.6,2.53-2.6,3.3,0,1.53,.8,3.07,2.6,3.07,.75,0,1.37-.23,1.8-.67,.23-.24,.4-.52,.49-.86l.06-.21h-3.01v-2.34h5.5s0,6.2,0,6.2Zm0-6.54h-5.83v3.01h2.88c-.08,.19-.2,.36-.34,.51-.36,.37-.9,.57-1.56,.57-1.56,0-2.26-1.37-2.26-2.73,0-.7,.16-2.97,2.26-2.97,1.07,0,1.69,.42,1.84,1.23l.04,.3h2.97v.09Zm9.25,6.54h-2.41l-3.97-5.97v5.97h-2.53V4.62s0-4.07,0-4.07h2.37l4.01,6.04V.55h2.53V11.16Z"/>
+                        <path class="cls-3" d="M63.39,7.45v-.55h-5v1.92h5.22l-.06-.21c-.11-.37-.16-.76-.16-1.16Zm-4.66,1.04v-1.26h4.33v.22c0,.36,.04,.7,.12,1.04h-4.45Z"/></svg>
+                    </span>
+                </div>
+            </div>
+
+            <div class="row justify-content-between about-lower-accent-elements2" style=" align-self: flex-end;"> 
+                
+                <div class="row col-lg-5 col-6 reverse">
+                    <div class="col-lg-4  about-lower-accent-text left-load">
+                        <span class="">[#] ONLINE</span>
+                        <span class="">DATA STRUCTURES ALIGNED</span>
+                    </div>
+
+                    <div class="col-lg-5 bar" style="justify-content: center;">
+                        <span class=""><?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 204.6 16.39"><defs><style>.cls-4{fill:rgb(255, 255, 255);}</style></defs><rect class="cls-4" x="0" y="8.19" width="4.09" height="4.1"/><polygon class="cls-4" points="12.27 0 8.18 0 4.09 0 4.09 4.1 8.18 4.1 12.27 4.1 16.37 4.1 16.37 0 12.27 0"/><polygon class="cls-4" points="28.64 4.1 28.64 0 24.55 0 20.46 0 20.46 4.1 24.55 4.1 28.64 4.1"/><polygon class="cls-4" points="28.64 8.19 24.55 8.19 20.46 8.19 20.46 4.1 16.37 4.1 16.37 8.19 12.27 8.19 8.18 8.19 8.18 12.3 12.27 12.3 16.37 12.3 20.46 12.3 20.46 16.39 24.55 16.39 28.64 16.39 32.73 16.39 36.83 16.39 40.92 16.39 40.92 12.3 36.83 12.3 36.83 8.19 32.73 8.19 28.64 8.19"/><polygon class="cls-4" points="40.92 0 36.83 0 36.83 4.1 36.83 8.19 40.92 8.19 40.92 4.1 45.01 4.1 45.01 0 40.92 0"/><polygon class="cls-4" points="49.1 4.1 45.01 4.1 45.01 8.19 45.01 12.3 49.1 12.3 49.1 16.39 53.2 16.39 53.2 12.3 53.2 8.19 53.2 4.1 53.2 0 49.1 0 49.1 4.1"/><rect class="cls-4" x="57.29" y="0" width="4.09" height="4.1"/><rect class="cls-4" x="65.47" y="4.1" width="4.09" height="4.09"/><rect class="cls-4" x="65.47" y="12.3" width="4.09" height="4.09"/><rect class="cls-4" x="69.57" y="0" width="4.09" height="4.1"/><rect class="cls-4" x="77.75" y="0" width="4.09" height="4.1"/><rect class="cls-4" x="81.84" y="4.1" width="4.09" height="4.09"/><polygon class="cls-4" points="94.12 8.19 90.03 8.19 90.03 12.3 90.03 16.39 94.12 16.39 98.21 16.39 98.21 12.3 94.12 12.3 94.12 8.19"/><rect class="cls-4" x="98.21" y="0" width="4.09" height="4.1"/><rect class="cls-4" x="102.3" y="4.1" width="4.09" height="4.09"/><polygon class="cls-4" points="106.39 12.3 106.39 16.39 110.48 16.39 114.58 16.39 114.58 12.3 110.48 12.3 106.39 12.3"/><rect class="cls-4" x="110.48" y="0" width="4.09" height="4.1"/><rect class="cls-4" x="114.58" y="8.19" width="4.09" height="4.1"/><polygon class="cls-4" points="159.59 8.19 159.59 12.3 155.5 12.3 155.5 8.19 155.5 4.1 151.41 4.1 151.41 0 147.32 0 143.22 0 139.13 0 135.04 0 130.95 0 126.85 0 122.76 0 122.76 4.1 126.85 4.1 126.85 8.19 126.85 12.3 126.85 16.39 130.95 16.39 135.04 16.39 139.13 16.39 139.13 12.3 143.22 12.3 147.32 12.3 147.32 16.39 151.41 16.39 155.5 16.39 159.59 16.39 163.68 16.39 163.68 12.3 163.68 8.19 163.68 4.1 159.59 4.1 159.59 8.19"/><polygon class="cls-4" points="175.96 4.1 175.96 0 171.87 0 167.78 0 163.68 0 163.68 4.1 167.78 4.1 171.87 4.1 175.96 4.1"/><polygon class="cls-4" points="175.96 12.3 171.87 12.3 171.87 16.39 175.96 16.39 180.05 16.39 180.05 12.3 180.05 8.19 175.96 8.19 175.96 12.3"/><rect class="cls-4" x="184.14" y="0" width="4.09" height="4.1"/><polygon class="cls-4" points="200.51 8.19 196.42 8.19 196.42 4.1 196.42 0 192.33 0 192.33 4.1 188.24 4.1 188.24 8.19 188.24 12.3 192.33 12.3 196.42 12.3 196.42 16.39 200.51 16.39 200.51 12.3 204.6 12.3 204.6 8.19 200.51 8.19"/></svg></span>
+                    </div>
+                </div>
+
+                <div class="row col-lg-5 col-6 d-flex" style="justify-content: right;">
+                    <div class="col-lg-5 bar" style="justify-content: center;">
+                        <?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 204.6 16.39"><defs><style>.cls-5{fill:rgb(255, 255, 255);}</style></defs><rect class="cls-5" x="200.51" y="4.09" width="4.09" height="4.1"/><polygon class="cls-5" points="192.33 12.29 188.24 12.29 188.24 16.39 192.33 16.39 196.42 16.39 200.51 16.39 200.51 12.29 196.42 12.29 192.33 12.29"/><polygon class="cls-5" points="192.33 8.19 196.42 8.19 196.42 4.09 192.33 4.09 188.24 4.09 184.14 4.09 184.14 0 180.05 0 175.96 0 171.87 0 167.78 0 163.69 0 163.69 4.09 167.78 4.09 167.78 8.19 171.87 8.19 175.96 8.19 180.05 8.19 184.14 8.19 184.14 12.29 188.24 12.29 188.24 8.19 192.33 8.19"/><polygon class="cls-5" points="175.96 12.29 175.96 16.39 180.05 16.39 184.14 16.39 184.14 12.29 180.05 12.29 175.96 12.29"/><polygon class="cls-5" points="163.69 12.29 159.59 12.29 159.59 16.39 163.69 16.39 167.78 16.39 167.78 12.29 167.78 8.19 163.69 8.19 163.69 12.29"/><polygon class="cls-5" points="159.59 4.09 155.5 4.09 155.5 0 151.41 0 151.41 4.09 151.41 8.19 151.41 12.29 151.41 16.39 155.5 16.39 155.5 12.29 159.59 12.29 159.59 8.19 159.59 4.09"/><rect class="cls-5" x="143.22" y="12.29" width="4.09" height="4.1"/><rect class="cls-5" x="135.04" y="8.19" width="4.09" height="4.09"/><rect class="cls-5" x="135.04" y="0" width="4.09" height="4.09"/><rect class="cls-5" x="130.95" y="12.29" width="4.09" height="4.1"/><rect class="cls-5" x="122.76" y="12.29" width="4.09" height="4.1"/><rect class="cls-5" x="118.67" y="8.19" width="4.09" height="4.09"/><polygon class="cls-5" points="106.39 0 106.39 4.09 110.49 4.09 110.49 8.19 114.58 8.19 114.58 4.09 114.58 0 110.49 0 106.39 0"/><rect class="cls-5" x="102.3" y="12.29" width="4.09" height="4.1"/><rect class="cls-5" x="98.21" y="8.19" width="4.09" height="4.09"/><polygon class="cls-5" points="98.21 0 94.12 0 90.03 0 90.03 4.09 94.12 4.09 98.21 4.09 98.21 0"/><rect class="cls-5" x="90.03" y="12.29" width="4.09" height="4.1"/><rect class="cls-5" x="85.93" y="4.09" width="4.09" height="4.1"/><polygon class="cls-5" points="77.75 8.19 77.75 4.09 77.75 0 73.66 0 69.57 0 65.47 0 65.47 4.09 61.38 4.09 57.29 4.09 57.29 0 53.2 0 49.1 0 45.01 0 40.92 0 40.92 4.09 40.92 8.19 40.92 12.29 45.01 12.29 45.01 8.19 45.01 4.09 49.1 4.09 49.1 8.19 49.1 12.29 53.2 12.29 53.2 16.39 57.29 16.39 61.38 16.39 65.47 16.39 69.57 16.39 73.66 16.39 77.75 16.39 81.84 16.39 81.84 12.29 77.75 12.29 77.75 8.19"/><polygon class="cls-5" points="32.74 12.29 28.64 12.29 28.64 16.39 32.74 16.39 36.83 16.39 40.92 16.39 40.92 12.29 36.83 12.29 32.74 12.29"/><polygon class="cls-5" points="28.64 4.09 32.74 4.09 32.74 0 28.64 0 24.55 0 24.55 4.09 24.55 8.19 28.64 8.19 28.64 4.09"/><rect class="cls-5" x="16.37" y="12.29" width="4.09" height="4.1"/><polygon class="cls-5" points="16.37 4.09 12.27 4.09 8.18 4.09 8.18 0 4.09 0 4.09 4.09 0 4.09 0 8.19 4.09 8.19 8.18 8.19 8.18 12.29 8.18 16.39 12.27 16.39 12.27 12.29 16.37 12.29 16.37 8.19 16.37 4.09"/></svg>
+                    </div> 
+
+                    <div class="col-lg-4  about-lower-accent-text right-load" style="text-align: right;">
+                        <span class="">CHECKS CLEARED</span>
+                        <span class="">[0] DEPENDENCIES</span>
+                    </div>
+                </div>
+
+            </div>
+            
+
+            <div class="row justify-content-center" style="position: absolute; align-self: flex-end;">
+                <div class="scroll-down" style="position: absolute; align-self: flex-end;">
+                    <span>SCROLL</span><span>DOWN</span><span>&#x1F866;</span>
+                </div>  
+            </div>
+
+    </section>
+
+
+    <div class="col-sm-12 left-load" style="display: flex; color: rgb(0, 0, 0); justify-content: center; align-self: center; margin-bottom:60px; margin-top:100px;"> 
+               
+        <div style="margin-top: -1.6rem; padding-right:20px;">
+            <div id="h-num" style="text-align: right;"> 00 </div>
+            <div id="h-arrow" style="text-align: right;"> &#x1F865; </div>
+        </div>
+
+        <div style="max-width: 600px;">
+            <div> HELLO WORLDS</div>
+            <h1> BACKGROUND</h1>
+            <p>Case Study 2024Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+    </div> 
+
+
+    <section class="row justify-content-center container-fluid" style="max-width: 1200px; justify-self: center; padding-bottom: 200px;">
+
+
+
+        <div style="position: absolute; min-height: 2500px;">
+        <div class="vertical-line"></div>
+        </div>
+
+
+        <div class="row d-flex justify-content-between" style="padding-top: 200px;">
+
+            <div class="col-sm-6 right-load" style="margin-left: auto; margin-right: auto; display: flex; color: rgb(0, 0, 0); justify-content: center; align-self: center;"> 
+               
+                <div style="width: 110px; margin-top: -1.6rem; padding-right:20px;">
+                    <div id="h-num" style="text-align: right;"> 01 </div>
+                    <div id="h-arrow" style="text-align: right;"> &#x1F865; </div>
+                </div>
+
+                <div style="max-width: 400px;">
+                    <div> HELLO WORLDS</div>
+                    <h1> GRAPHIC DESIGN</h1>
+                    <p>Case Study 2024Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                </div>
+
+            </div>
+
+            <div class="col-sm-6 left-load" style="height:0px;"> 
+                
+            </div>
+
+            <div style="position: relative;">
+                <div class="line-left"></div>
+            </div>
+            
+        </div>
+
+        <div class="row d-flex justify-content-between" style="">
+            
+            <div class="col-sm-6 left-load" style="margin-left: auto; margin-right: auto;"> 
+                
+            </div>
+
+            <div class="col-sm-6 left-load" style="margin-left: auto; margin-right: auto; display: flex; color: rgb(0, 0, 0); justify-content: center; align-self: center;"> 
+               
+                <div style="width: 110px; margin-top: -1.6rem; padding-right:20px;">
+                    <div id="h-num" style="text-align: right;"> 02 </div>
+                    <div id="h-arrow" style="text-align: right;"> &#x1F865; </div>
+                </div>
+
+                <div style="max-width: 400px;">
+                    <div> HELLO WORLDS</div>
+                    <h1> 3D DESIGN</h1>
+                    <p>Case Study 2024Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                </div>
+
+            </div>
+        
+            <div class="line-right"></div>
+
+        </div>
+
+        <div class="row d-flex justify-content-between" style="">
+
+            <div class="col-sm-6 left-load" style="margin-left: auto; margin-right: auto; display: flex; color: rgb(0, 0, 0); justify-content: center; align-self: center;"> 
+               
+                <div style="width: 110px; margin-top: -1.6rem; padding-right:20px;">
+                    <div id="h-num" style="text-align: right;"> 03 </div>
+                    <div id="h-arrow" style="text-align: right;"> &#x1F865; </div>
+                </div>
+
+                <div style="max-width: 400px;">
+                    <div> HELLO WORLDS</div>
+                    <h1> FRONTEND DESIGN / THREE.JS</h1>
+                    <p>Case Study 2024Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                </div>
+
+            </div>
+
+            <div class="col-sm-6 left-load" style="margin-left: auto; margin-right: auto;"> 
+                
+            </div>
+
+            <div class="line-left"></div>
+        
+        </div>
+
+        <div class="row d-flex justify-content-between" style="">
+            
+            <div class="col-sm-6 left-load" style="margin-left: auto; margin-right: auto;"> 
+                
+            </div>
+
+            <div class="col-sm-6 left-load" style="margin-left: auto; margin-right: auto; display: flex; color: rgb(0, 0, 0); justify-content: center; align-self: center;"> 
+               
+                <div style="width: 110px; margin-top: -1.6rem; padding-right:20px;">
+                    <div id="h-num" style="text-align: right;"> 04 </div>
+                    <div id="h-arrow" style="text-align: right;"> &#x1F865; </div>
+                </div>
+
+                <div style="max-width: 400px;">
+                    <div> HELLO WORLDS</div>
+                    <h1> ANIMATION 3D/2D</h1>
+                    <p>Case Study 2024Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                </div>
+
+            </div>
+
+            <div class="line-right"></div>
+        
+        </div>
+
+        <div class="row d-flex justify-content-between" style="">
+
+            <div class="col-sm-6 left-load" style="margin-left: auto; margin-right: auto; display: flex; color: rgb(0, 0, 0); justify-content: center; align-self: center;"> 
+               
+                <div style="width: 110px; margin-top: -1.6rem; padding-right:20px;">
+                    <div id="h-num" style="text-align: right;"> 03 </div>
+                    <div id="h-arrow" style="text-align: right;"> &#x1F865; </div>
+                </div>
+
+                <div style="max-width: 400px;">
+                    <div> HELLO WORLDS</div>
+                    <h1> FRONTEND DESIGN / THREE.JS</h1>
+                    <p>Case Study 2024Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                </div>
+
+            </div>
+
+            <div class="col-sm-6 left-load" style="margin-left: auto; margin-right: auto;"> 
+                
+            </div>
+
+            <div class="line-left"></div>
+        
+        </div>
+
+        <div class="row d-flex justify-content-between" style="">
+            
+            <div class="col-sm-6 left-load" style="margin-left: auto; margin-right: auto;"> 
+                
+            </div>
+
+            <div class="col-sm-6 left-load" style="margin-left: auto; margin-right: auto; display: flex; color: rgb(0, 0, 0); justify-content: center; align-self: center;"> 
+               
+                <div style="width: 110px; margin-top: -1.6rem; padding-right:20px;">
+                    <div id="h-num" style="text-align: right;"> 04 </div>
+                    <div id="h-arrow" style="text-align: right;"> &#x1F865; </div>
+                </div>
+
+                <div style="max-width: 400px;">
+                    <div> HELLO WORLDS</div>
+                    <h1> ANIMATION 3D/2D</h1>
+                    <p>Case Study 2024Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                </div>
+
+            </div>
+
+            <div class="line-right"></div>
+        
+        </div>
+    
+    </section>
+
+
+
+
+
+
+
+
+
+
+</main>
+<!-- end main -->
+
+    <!-- G4 071125 - Added id="xFooter" for width Debug -->
+    <footer id="xFooter" class="" style="margin-top: 0rem;">
+        <div class="footer-section">
+            <div class="row justify-content-between">
+                <div class="col-2 ft"> <h1>+</h1> </div>
+                <div class="col-2 ft"> <h1>+</h1> </div>
+                <div class="col-2 ft" style="text-align:center;"> <h1>+</h1> </div>
+                <div class="col-2 ft" style="text-align:right;"> <h1>+</h1> </div>
+                <div class="col-2 ft" style="text-align:right;"> <h1>+</h1> </div>
+            </div>
+            <div class="row footer-top" style="justify-content: right;">
+                <div class="col-12 col-md-6 footer-spacing">
+                    <div class="footer-contact-form">
+                        <span class="">Let's Talk!</span>
+                        <div class="footer-contact-form-box">Enter Your Email</div>
+                    </div>
+                </div>
+<!-- G5 Added 053125 START --> 
+                <div class="col-6 col-sm-3 footer-spacing">
+                    <div class="link-btn">
+                        <div class="btn-animate" style="display:inline-flex;">
+                            <p class="arrow">&#x1F865;</p> 
+                            <a href="https://www.w3schools.com/" class="link-ul scramble-hover" data-text="Instagram">Instagram</a>
+                        </div>
+                    </div>
+                    <div class="link-btn">
+                        <div class="btn-animate" style="display:inline-flex;">
+                            <p class="arrow">&#x1F865;</p> 
+                            <a href="https://www.w3schools.com/" class="link-ul scramble-hover" data-text="LinkedIn">LinkedIn</a>
+                        </div>
+                    </div>
+                    <div class="link-btn">
+                        <div class="btn-animate" style="display:inline-flex;">
+                            <p class="arrow">&#x1F865;</p> 
+                            <a href="https://www.w3schools.com/" class="link-ul scramble-hover" data-text="Youtube">Youtube</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-3 footer-spacing" style="display:inline-flex;">                 
+                    <p>Based in Los Angeles, California</p>
+                </div>
+                <div class="col-6 col-sm-3 footer-spacing">
+                    <p>General Enquires:</p>
+                    <div class="link-btn">
+                        <div class="btn-animate" style="display:inline-flex;">
+                            <p class="arrow">&#x1F865;</p> 
+                            <a href="https://www.w3schools.com/" class="link-ul scramble-hover" data-text="Jorde@durdy.design">Jorde@durdy.design</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-3 footer-spacing">
+                    <p>New Business Enquires:</p>
+                    <div class="link-btn">
+                        <div class="btn-animate" style="display:inline-flex;">
+                            <p class="arrow">&#x1F865;</p> 
+                            <a href="https://www.w3schools.com/" class="link-ul scramble-hover" data-text="Jorde@durdy.design">Jorde@durdy.design</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- G5 Added 053125 END --> 
+            <div class="row justify-content-center footer-bottom">
+                    <div class="col-12 col-sm-6" style="   display: inline-block; align-self: flex-end;">
+                        <p>©2025 Durdy Design | Jorde Durden</p>
+                    </div>
+                    <div class="col-12 col-sm-3" style="   display: inline-block; align-self: flex-end;">
+                        <p></p>
+                    </div>
+                    <div class="col-12 col-sm-3" style="   display: inline-block; align-self: flex-end;">
+                        <p>Made with &#10084; by Durdy Design</p>
+                    </div>
+            </div>
+        </div>
+        <div>
+
+        </div>
+    </footer>
+
+    <!-- Include Bootstrap Modules -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+    <!-- Include GSAP Modules -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://unpkg.com/lenis@1.3.1/dist/lenis.min.js"></script> 
+
+    <script>
+        // Initialize Lenis
+        const lenis = new Lenis({
+        autoRaf: true,
+        });
+
+        // Listen for the scroll event and log the event data
+        lenis.on('scroll', (e) => {
+        // console.log(e);
+        });
+    </script>
+    
+    <!-- Setup Import Maps for Modules -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three/examples/jsm/",
+                "jsm/": "https://unpkg.com/three/examples/jsm/"
+            }
+        }
+    </script>
+
+    <!-- Include custom JS for this app -->
+    <script src="./js/about.js" type="module"></script>
+    <script src="./js/JDInteractivePoints.js" type="module"></script>
+    <script src="./StyleMain.js" type="module"></script>
+    
+  
+</body>
+</html>
