@@ -64,12 +64,31 @@ window.addEventListener("load", () => {
   ScrollTrigger.refresh();
 });
 
-// Reapply on resize (mobile safe)
+// // Reapply on resize (mobile safe)
+// window.addEventListener("resize", () => {
+//   ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+//   applyCenteringAnimation();
+//   ScrollTrigger.refresh();
+// });
+
+let resizeTimeout;
 window.addEventListener("resize", () => {
-  ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-  applyCenteringAnimation();
-  ScrollTrigger.refresh();
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+    // Use rAF for layout-safe updates
+    requestAnimationFrame(() => {
+      applyCenteringAnimation();
+
+      // Refresh after animations and DOM changes are in place
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 50);
+    });
+  }, 250);
 });
+
 
 
 // Other animations (optional)
