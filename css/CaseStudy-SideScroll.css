@@ -33,6 +33,13 @@
     width: 60vw !important; 
 }
 
+.hold {
+    background-image: url("/Images/Spray2.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
 
 
 /* For Mobile ____________________________________________________________________*/

@@ -8,28 +8,102 @@ document.addEventListener("mousemove", (e) => {
 
 
 
+// Ensure GSAP and ScrollTrigger are registered
+gsap.registerPlugin(ScrollTrigger);
+
+// Utility function to compute centered position + scale
 function getCenterScalePosition(selector, scaleTo = 0.8) {
-    const el = document.querySelector(selector);
-    if (!el) return { scale: 1, x: 0, y: 0 };
-  
-    const vw = window.innerWidth;
-    const vh = window.innerHeight;
-  
-    const bounds = el.getBoundingClientRect();
-    const originalWidth = bounds.width;
-    const originalHeight = bounds.height;
-  
-    const targetWidth = vw * scaleTo;
-    const scale = targetWidth / originalWidth;
-  
-    const scaledWidth = originalWidth * scale;
-    const scaledHeight = originalHeight * scale;
-  
-    const x = (vw - scaledWidth) / 2 - bounds.left;
-    const y = (vh - scaledHeight) / 2 - bounds.top;
-  
-    return { scale, x, y };
+  const el = document.querySelector(selector);
+  if (!el) return { scale: 1, x: 0, y: 0 };
+
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+
+  const bounds = el.getBoundingClientRect();
+  const originalWidth = bounds.width;
+  const originalHeight = bounds.height;
+
+  const targetWidth = vw * scaleTo;
+  const scale = targetWidth / originalWidth;
+
+  const scaledWidth = originalWidth * scale;
+  const scaledHeight = originalHeight * scale;
+
+  const x = (vw - scaledWidth) / 2 - bounds.left;
+  const y = (vh - scaledHeight) / 2 - bounds.top;
+
+  return { scale, x, y };
+}
+
+// Core animation setup
+function applyCenteringAnimation() {
+  const { scale, x, y } = getCenterScalePosition(".size-up-load", 0.8);
+
+  gsap.from(".size-up-load", {
+    scrollTrigger: {
+      trigger: ".h-contain",
+      start: "6% 5%",
+      end: "1% top",
+      markers: true,
+      scrub: false,
+      toggleActions: "play play reverse reverse",
+    },
+    scale: scale,
+    x: x,
+    y: y + 80,
+    transformOrigin: "left top",
+    duration: 0.6,
+    ease: "power.out(1, 0.3)",
+    overwrite: true
+  });
+}
+
+// Initial setup after page load
+window.addEventListener("load", () => {
+  applyCenteringAnimation();
+  ScrollTrigger.refresh();
+});
+
+// Reapply on resize (mobile safe)
+window.addEventListener("resize", () => {
+  ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  applyCenteringAnimation();
+  ScrollTrigger.refresh();
+});
+
+
+// Other animations (optional)
+gsap.timeline()
+  .from("#h-arrow", {
+    opacity: 0,
+    x: -40,
+    y: -40,
+    duration: 0.3,
+    delay: 1.5,
+  });
+
+gsap.timeline()
+  .from("#h-num", {
+    opacity: 0,
+    x: -50,
+    duration: 0.3,
+    delay: 1,
+  });
+
+
+// Page pinning animation
+gsap.timeline({
+  scrollTrigger: {
+    trigger: "main",
+    start: "top top",
+    end: "+=100%",
+    scrub: true,
+    pin: true,
+    markers: false
   }
+});
+
+  
 
 
 
@@ -81,55 +155,55 @@ splitTypes.forEach((char,i) => {
 //   })
 
 
-const { scale, x, y } = getCenterScalePosition(".size-up-load", 0.8);
+// const { scale, x, y } = getCenterScalePosition(".size-up-load", 0.8);
 
-gsap.from(".size-up-load", {
-  scrollTrigger: {
-    trigger: "main",
-    start: "20% top",
-    end: "20% top",
-    scrub: false,
-    markers: false,
-    ease: "elastic.out(1, 0.3)",
-    toggleActions: "play play reverse reverse",
-  },
-  scale: scale * 1, // animate from double size
-  x: x,
-  y: y + 80, // offset down to animate upward
-  transformOrigin: "left top",
-  duration: 0.6,
-});
-
-
-
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: "main",
-      start: "top top",
-      end: "+=100%",
-      scrub: true,
-      pin: true,
-      markers: false
-    }
-  })
+// gsap.from(".size-up-load", {
+//   scrollTrigger: {
+//     trigger: "main",
+//     start: "20% top",
+//     end: "20% top",
+//     scrub: false,
+//     markers: false,
+//     ease: "elastic.out(1, 0.3)",
+//     toggleActions: "play play reverse reverse",
+//   },
+//   scale: scale * 1, // animate from double size
+//   x: x,
+//   y: y + 80, // offset down to animate upward
+//   transformOrigin: "left top",
+//   duration: 0.6,
+// });
 
 
-  gsap.timeline()
-.from("#h-arrow", {
-  opacity: 0,
-  x:-40,
-  y:-40,
-  duration: 0.3,
-  delay:1.5,
-});
 
-gsap.timeline()
-.from("#h-num", {
-  opacity: 0,
-  x:-50,
-  duration: 0.3,
-  delay:1,
-});
+//   gsap.timeline({
+//     scrollTrigger: {
+//       trigger: "main",
+//       start: "top top",
+//       end: "+=100%",
+//       scrub: true,
+//       pin: true,
+//       markers: false
+//     }
+//   })
+
+
+//   gsap.timeline()
+// .from("#h-arrow", {
+//   opacity: 0,
+//   x:-40,
+//   y:-40,
+//   duration: 0.3,
+//   delay:1.5,
+// });
+
+// gsap.timeline()
+// .from("#h-num", {
+//   opacity: 0,
+//   x:-50,
+//   duration: 0.3,
+//   delay:1,
+// });
 
 })
 
@@ -181,7 +255,7 @@ document.querySelectorAll(".line-right").forEach((el) => {
         start: "+=1200 +=800",  // when the top of the element hits 80% of the viewport
         end: "+=900 top", // optional: helps control scrub range
         scrub: true,
-        markers: true // remove in production
+        markers: false // remove in production
       }
     });
   });
@@ -225,9 +299,9 @@ splitTypes.forEach((char,i) => {
 
     gsap.from(text.words, {
        scrollTrigger: {
-           trigger: "main",
-           start: '20% top',
-           end: '20% top',
+           trigger: ".h-contain",
+           start: "6% 5%",
+           end: "1% top",
            scrub: false,
            markers: false,
            toggleActions: 'play play reverse reverse'
@@ -242,9 +316,9 @@ splitTypes.forEach((char,i) => {
   // Timeline for .right-load
   gsap.timeline({
     scrollTrigger: {
-      trigger: "main",
-      start: "20% top",
-      end: "20% top",
+      trigger: ".h-contain",
+      start: "6% 5%",
+      end: "1% top",
       scrub: false,
       markers: false,
       toggleActions: "play none none reverse"
@@ -269,9 +343,9 @@ splitTypes.forEach((char,i) => {
   // Timeline for .left-load
   gsap.timeline({
     scrollTrigger: {
-      trigger: "main",
-      start: "20% top",
-      end: "20% top",
+      trigger: ".h-contain",
+      start: "6% 5%",
+      end: "1% top",
       scrub: false,
       markers: false,
       toggleActions: "play none none reverse"

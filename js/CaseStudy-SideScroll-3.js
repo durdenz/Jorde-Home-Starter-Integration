@@ -140,7 +140,7 @@ tl
 // Animate OUT on scroll down
 ScrollTrigger.create({
   trigger: block,
-  start: "20% 40%",
+  start: "21% 40%",
   end: "top top",
   markers: true,
   onLeave: () => {

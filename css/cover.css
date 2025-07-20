@@ -1691,6 +1691,18 @@ font-weight: 200;
   overflow: clip;
 }
 
+.center-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* full viewport height */
+  width: 100vw;  /* full viewport width */
+  top: 0;
+  left: 0;
+  z-index: 1; /* optional */
+  padding-bottom: 30px;
+}
+
 .section4 {
   padding-left: 5px;
   padding-right: 5px;
@@ -1766,7 +1778,7 @@ font-weight: 200;
     font-size: 4vw;
     line-height: auto;
     letter-spacing: 0px;
-    margin-top: 90px;
+    margin-top: 10px;
   }
 
   .cs-button {

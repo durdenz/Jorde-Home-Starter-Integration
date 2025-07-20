@@ -42,12 +42,16 @@ async function init() {
 
     const container = document.getElementById( 'particle' );
 
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+
+
     console.log("Particle - GrabDOM: Windows.innerWidth = "+window.innerWidth); //G4 071125 - Debug About Width Issue
     console.log('Particle - GrabDOM: particle.offsetWidth = '+document.getElementById("particle").offsetWidth);
 
     scene = new THREE.Scene();
 
-    camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 10000 );
+    camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
     camera.position.z = 250;
 
     // G5 062925
@@ -144,7 +148,10 @@ async function init() {
 
     renderer = new THREE.WebGLRenderer();
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(window.innerWidth, window.innerHeight); // G4 071025 Canvas Overflow Hack add wC (unknown Width Correction Facter)
+    
+    
+    renderer.setSize(width, height);
+    
     console.log("Particle - Before Add to DOM: Windows.innerWidth = "+window.innerWidth); //G4 071125 - Debug About Width Issue
      console.log('Particle - Before Add to DOM: particle.offsetWidth = '+document.getElementById("particle").offsetWidth);
     container.appendChild(renderer.domElement);
@@ -153,17 +160,16 @@ async function init() {
     
     // Setup EffectComposer and passes
     composer = new EffectComposer(renderer);
-    
     renderPass = new RenderPass(scene, camera);
     composer.addPass(renderPass);
-    
     bloomPass = new UnrealBloomPass(
-        new THREE.Vector2(window.innerWidth, window.innerHeight),
-        1.5,  // strength
-        0.4,  // radius
-        0.85  // threshold
+        new THREE.Vector2(width, height), // <- use width/height
+        1.5,
+        0.4,
+        0.85
     );
     composer.addPass(bloomPass);
+    
     
     renderer.setAnimationLoop(animate);
     
@@ -175,7 +181,12 @@ async function init() {
 
     //
 
-    window.addEventListener( 'resize', onWindowResize );
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(onWindowResize, 150);
+    });
+    
     document.addEventListener( 'pointermove', onPointerMove );
 
 }
@@ -188,14 +199,16 @@ function onPointerMove( event ) {
 }
 
 function onWindowResize() {
-    camera.aspect = window.innerWidth / window.innerHeight;
+    const container = document.getElementById('particle');
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+    
+    camera.aspect = width / height;
     camera.updateProjectionMatrix();
     
-    console.log("Particle - On Window Resize: Windows.innerWidth = "+window.innerWidth); //G4 071125 - Debug About Width Issue
-     console.log('Particle - On Window Resize: particle.offsetWidth = '+document.getElementById("particle").offsetWidth);
-
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    composer.setSize(window.innerWidth, window.innerHeight);  // Add this line
+    renderer.setSize(width, height);
+    composer.setSize(width, height);
+    
 }
 
 function animate() {
