@@ -41,12 +41,12 @@ function applyCenteringAnimation() {
 
   gsap.from(".size-up-load", {
     scrollTrigger: {
-      trigger: ".size-up-wrapper", // NOTICE: Changed from .h-contain
+      trigger: ".h-contain",
       start: "6% 5%",
       end: "1% top",
       markers: true,
       scrub: false,
-      toggleActions: "play none none reverse",
+      toggleActions: "play play reverse reverse",
     },
     scale: scale,
     x: x,
@@ -56,7 +56,6 @@ function applyCenteringAnimation() {
     ease: "power.out(1, 0.3)",
     overwrite: true
   });
-  
 }
 
 // Initial setup after page load

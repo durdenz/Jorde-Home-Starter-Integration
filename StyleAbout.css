@@ -9,12 +9,8 @@ html, body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-}
-
-.section-about {
-    overflow-x: hidden;
 }
 
 
@@ -101,7 +97,7 @@ html, body {
 }
 
 .about-lower-accent-elements2 {
-    position: relative;
+    position: absolute;
     /* bottom:0; */
     font-family:'Roboto Mono', 'Arial Narrow', Arial, sans-serif;
 }
