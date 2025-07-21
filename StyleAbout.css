@@ -9,8 +9,25 @@ html, body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
+}
+
+#designTree {
+    position: relative;
+}
+
+.size-up-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    pointer-events: none; /* if it shouldn't block clicks */
+  }
+
+.section-about {
+    overflow-x: hidden;
 }
 
 
@@ -97,7 +114,7 @@ html, body {
 }
 
 .about-lower-accent-elements2 {
-    position: absolute;
+    position: relative;
     /* bottom:0; */
     font-family:'Roboto Mono', 'Arial Narrow', Arial, sans-serif;
 }

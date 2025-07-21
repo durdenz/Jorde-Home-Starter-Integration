@@ -11,6 +11,8 @@ document.addEventListener("mousemove", (e) => {
 // Ensure GSAP and ScrollTrigger are registered
 gsap.registerPlugin(ScrollTrigger);
 
+ScrollTrigger.normalizeScroll(true); // enables scroll sync fix
+
 // Utility function to compute centered position + scale
 function getCenterScalePosition(selector, scaleTo = 0.8) {
   const el = document.querySelector(selector);
@@ -41,12 +43,12 @@ function applyCenteringAnimation() {
 
   gsap.from(".size-up-load", {
     scrollTrigger: {
-      trigger: ".h-contain",
+      trigger: ".size-up-wrapper", // NOTICE: Changed from .h-contain
       start: "6% 5%",
       end: "1% top",
       markers: true,
       scrub: false,
-      toggleActions: "play play reverse reverse",
+      toggleActions: "play none none reverse",
     },
     scale: scale,
     x: x,
@@ -56,6 +58,7 @@ function applyCenteringAnimation() {
     ease: "power.out(1, 0.3)",
     overwrite: true
   });
+  
 }
 
 // Initial setup after page load
@@ -118,6 +121,7 @@ gsap.timeline({
     end: "+=100%",
     scrub: true,
     pin: true,
+    // pinSpacing: false,
     markers: false
   }
 });
