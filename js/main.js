@@ -322,6 +322,7 @@ async function setupScene() {
 	scene.add(camera);
 
 	const renderer = setupRenderer();
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); // Limit to 1.5x max - G4 072125 - Performance Item 3
 
 	// === Unreal Bloom Pass Setup ===
 	const composer = new EffectComposer(renderer);
@@ -332,7 +333,7 @@ async function setupScene() {
 		exposure: 0,
 		bloomStrength: 0.5,
 		bloomThreshold: 0,
-		bloomRadius: 1
+		bloomRadius: 0.4  // G4 072425 Performance Item 2
 	};
 
 	const bloomPass = new UnrealBloomPass(
@@ -399,7 +400,30 @@ async function setupScene() {
 		// Use composer instead of renderer
 		composer.render();
 	}
-	animate();
+
+  // G4 072425 Performance Item 
+  function isInViewPort(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+const elSplineCanvas = document.getElementById("spline-path-canvas");
+const isAnimatingSpline = false;
+
+window.addEventListener('scroll', () => {
+  if (isInViewPort(elSplineCanvas) && !isAnimatingSpline) {
+    animate()
+    isAnimatingSpline = true;
+  } else if (isAnimatingSpline) {
+    composer.setAnimationLoop(null);
+    isAnimatingSpline = false;
+  }
+});
+// G4 072425 End of Performance Item
 
 	// GD5 Added handleWindowResize and Event Listener 053125 
 	function handleWindowResize() {

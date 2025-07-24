@@ -12,6 +12,7 @@ const camera = new THREE.PerspectiveCamera(75, w / h, 0.9, 1000);
 camera.position.z = 5;
 const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: RapierCanvas });
 renderer.setSize(w, h);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); // Limit to 1.5x max - G4 072125 - Performance Item 3
 // document.body.appendChild(renderer.domElement);
 
 let mousePos = new THREE.Vector2();
@@ -22,7 +23,7 @@ const world = new RAPIER.World(gravity);
 // post-processing
 const renderScene = new RenderPass(scene, camera);
 // resolution, strength, radius, threshold
-const bloomPass = new UnrealBloomPass(new THREE.Vector2(w, h), 2.0, 0.0, 0.005);
+const bloomPass = new UnrealBloomPass(new THREE.Vector2(w, h), 0.8, 0.0, 0.005); // G4 072425 Performance Item 2
 const composer = new EffectComposer(renderer);
 composer.addPass(renderScene);
 composer.addPass(bloomPass);
@@ -56,7 +57,31 @@ function animate() {
   composer.render(scene, camera);
 }
 
+// G4 072425 Performance Item 
+function isInViewPort(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+const elRapierCanvas = document.getElementById("RapierCanvas");
+const isAnimatingRapier = false;
+
+window.addEventListener('scroll', () => {
+  if (isInViewPort(elRapierCanvas) && !isAnimatingRapier) {
+    animate()
+    isAnimatingRapier = true;
+  } else if (isAnimatingRapier) {
+    renderer.setAnimationLoop(null);
+    isAnimatingRapier = false;
+  }
+});
+// G4 072425 End of Performance Item
 animate();
+isAnimatingRapier = true;
 
 function handleWindowResize () {
   camera.aspect = window.innerWidth / window.innerHeight;
