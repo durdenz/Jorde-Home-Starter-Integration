@@ -402,28 +402,29 @@ async function setupScene() {
 	}
 
   // G4 072425 Performance Item 
-  function isInViewPort(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-const elSplineCanvas = document.getElementById("spline-path-canvas");
-const isAnimatingSpline = false;
+//   function isInViewPort(el) {
+//     const rect = el.getBoundingClientRect();
+//     return (
+//       rect.top >= 0 &&
+//       rect.left >= 0 &&
+//       rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+//       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+//     );
+//   }
+// const elSplineCanvas = document.getElementById("spline-path-canvas");
+// const isAnimatingSpline = false;
 
-window.addEventListener('scroll', () => {
-  if (isInViewPort(elSplineCanvas) && !isAnimatingSpline) {
-    animate()
-    isAnimatingSpline = true;
-  } else if (isAnimatingSpline) {
-    composer.setAnimationLoop(null);
-    isAnimatingSpline = false;
-  }
-});
+// window.addEventListener('scroll', () => {
+//   if (isInViewPort(elSplineCanvas) && !isAnimatingSpline) {
+//     animate();
+//     isAnimatingSpline = true;
+//   } else if (isAnimatingSpline) {
+//     composer.setAnimationLoop(null);
+//     isAnimatingSpline = false;
+//   }
+// });
 // G4 072425 End of Performance Item
+animate();
 
 	// GD5 Added handleWindowResize and Event Listener 053125 
 	function handleWindowResize() {

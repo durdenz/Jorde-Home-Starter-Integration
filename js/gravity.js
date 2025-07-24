@@ -58,30 +58,31 @@ function animate() {
 }
 
 // G4 072425 Performance Item 
-function isInViewPort(el) {
-  const rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-const elRapierCanvas = document.getElementById("RapierCanvas");
-const isAnimatingRapier = false;
+// function isInViewPort(el) {
+//   const rect = el.getBoundingClientRect();
+//   return (
+//     rect.top >= 0 &&
+//     rect.left >= 0 &&
+//     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+//     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+//   );
+// }
+// const elRapierCanvas = document.getElementById("RapierCanvas");
+// const isAnimatingRapier = false;
 
-window.addEventListener('scroll', () => {
-  if (isInViewPort(elRapierCanvas) && !isAnimatingRapier) {
-    animate()
-    isAnimatingRapier = true;
-  } else if (isAnimatingRapier) {
-    renderer.setAnimationLoop(null);
-    isAnimatingRapier = false;
-  }
-});
+// window.addEventListener('scroll', () => {
+//   if (isInViewPort(elRapierCanvas) && !isAnimatingRapier) {
+//     animate()
+//     isAnimatingRapier = true;
+//   } else if (isAnimatingRapier) {
+//     renderer.setAnimationLoop(null);
+//     isAnimatingRapier = false;
+//   }
+// });
+// isAnimatingRapier = true;
 // G4 072425 End of Performance Item
 animate();
-isAnimatingRapier = true;
+
 
 function handleWindowResize () {
   camera.aspect = window.innerWidth / window.innerHeight;
