@@ -21,7 +21,7 @@ mark {
 
 /* Fonts */
 @font-face {
-  font-family: 'Helvectica';
+  font-family: 'Helvectica', 'Arial Unicode MS';
   src: url('Fonts/Helvetica.ttf') format('opentype');
 }
 
@@ -462,7 +462,7 @@ letter-spacing: -5px;
   text-transform: uppercase;
   hyphens: auto;
   color: rgb(255, 255, 255);
-  font-family: 'Helvetica', sans-serif; /* Use the defined font-family name */
+  font-family: 'Helvetica', 'Arial Unicode MS'; /* Use the defined font-family name */
 }
 
 .home-byline h1 .word{
@@ -613,7 +613,7 @@ letter-spacing: -5px;
 .case-title {
   text-align: left;
   font-size: 3vw;
-  letter-spacing: -.29rem;
+  letter-spacing: -.29vi;
   text-transform: uppercase;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -627,6 +627,7 @@ letter-spacing: -5px;
 
 .case-title .word {
   padding-right: .13rem;
+  overflow: visible;
 }
 
 #tag-filters {
@@ -673,6 +674,7 @@ letter-spacing: -5px;
   color:lawngreen;
 }
 
+
 .case-study-block * {
   overflow: hidden;
   display: inline-block;
@@ -692,6 +694,9 @@ Hide original inline since SplitType will wrap spans
 .cs-button {
   display: inline-block;
   transform: translateY(100%);
+  width: 200px;
+  /* transform: translate(0px, 0px) !important; */
+  margin-left: 400px;
 }
 
 
@@ -1763,9 +1768,9 @@ font-weight: 200;
   .cs-title {
     font-size: 70px;
     letter-spacing: -.32rem;
-    line-height: 65px;
-    margin-top: 5rem;
-    margin-bottom: 3rem;
+    line-height: 55px;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
   }
 
   .cs-title .char{
@@ -1782,9 +1787,10 @@ font-weight: 200;
   }
 
   .cs-button {
-    margin-top:-80px;
-    margin-bottom:40px;
+    margin-top:30px !important;
+    margin-bottom:0px;
     margin-left:-1px;
+    transform: translate(0px, 0px) !important;
   }
 
   .cs-description {
@@ -1794,7 +1800,7 @@ font-weight: 200;
   }
 
   .tags-container {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
 }

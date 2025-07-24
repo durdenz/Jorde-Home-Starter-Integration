@@ -52,7 +52,8 @@ async function init() {
     scene = new THREE.Scene();
 
     camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
-    camera.position.z = 250;
+    camera.position.z = 220;
+    camera.position.y = 0;
 
     // G5 062925
     // cursorLight = new THREE.PointLight(0xffffff, 1, 500);
