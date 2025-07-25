@@ -48,39 +48,34 @@ rectLight.position.set( 0, 5, 0.2 );
 rectLight.lookAt( 0, 0, 0 );
 scene.add( rectLight )
 
+// G4 072525 Performance Item - Stop animating when canvas out of viewport
+let rapierVisible = true; // G4 Start Visible
 
 function animate() {
-  requestAnimationFrame(animate);
-  world.step();
-  mouseBall.update(mousePos);
-  bodies.forEach(b => b.update());
-  composer.render(scene, camera);
+  if (rapierVisible) {
+    requestAnimationFrame(animate);
+    world.step();
+    mouseBall.update(mousePos);
+    bodies.forEach(b => b.update());
+    composer.render(scene, camera);
+  } else {
+    requestAnimationFrame(animate);
+  }
 }
 
-// G4 072425 Performance Item 
-// function isInViewPort(el) {
-//   const rect = el.getBoundingClientRect();
-//   return (
-//     rect.top >= 0 &&
-//     rect.left >= 0 &&
-//     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-//     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-//   );
-// }
-// const elRapierCanvas = document.getElementById("RapierCanvas");
-// const isAnimatingRapier = false;
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          rapierVisible = true;
+        } else {
+          rapierVisible = false;
+        } 
+    });
+});
 
-// window.addEventListener('scroll', () => {
-//   if (isInViewPort(elRapierCanvas) && !isAnimatingRapier) {
-//     animate()
-//     isAnimatingRapier = true;
-//   } else if (isAnimatingRapier) {
-//     renderer.setAnimationLoop(null);
-//     isAnimatingRapier = false;
-//   }
-// });
-// isAnimatingRapier = true;
-// G4 072425 End of Performance Item
+observer.observe(document.getElementById("RapierCanvas"));
+// G4 072525 End Of Performance Item - Stop animating when canvas out of viewport
+
 animate();
 
 

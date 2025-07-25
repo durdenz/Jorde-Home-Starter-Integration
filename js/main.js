@@ -388,43 +388,39 @@ async function setupScene() {
 	const clock = new THREE.Clock();
 	// G4 End of Changes for Animation
 
+  // G4 072525 Performance Item - Stop animating when canvas out of viewport
+  let splineVisible = true; // G4 Start Visible
+
 	// Animate the scene
 	function animate() {
-		requestAnimationFrame(animate);
-		updatePosition(curvePath, camera, positionAlongPathState);
+    if (splineVisible) {
+      requestAnimationFrame(animate);
+      updatePosition(curvePath, camera, positionAlongPathState);
 
-		if (mixer) {
-			mixer.update(clock.getDelta());
-		}
+      if (mixer) {
+        mixer.update(clock.getDelta());
+      }
 
-		// Use composer instead of renderer
-		composer.render();
+      // Use composer instead of renderer
+      composer.render();
+    } else {
+      requestAnimationFrame(animate);
+    }
 	}
+  const splineObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            splineVisible = true;
+          } else {
+            splineVisible = false;
+          } 
+      });
+  });
 
-  // G4 072425 Performance Item 
-//   function isInViewPort(el) {
-//     const rect = el.getBoundingClientRect();
-//     return (
-//       rect.top >= 0 &&
-//       rect.left >= 0 &&
-//       rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-//       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-//     );
-//   }
-// const elSplineCanvas = document.getElementById("spline-path-canvas");
-// const isAnimatingSpline = false;
+  splineObserver.observe(document.getElementById("spline-path-canvas"));
+// G4 072525 End Of Performance Item - Stop animating when canvas out of viewport
 
-// window.addEventListener('scroll', () => {
-//   if (isInViewPort(elSplineCanvas) && !isAnimatingSpline) {
-//     animate();
-//     isAnimatingSpline = true;
-//   } else if (isAnimatingSpline) {
-//     composer.setAnimationLoop(null);
-//     isAnimatingSpline = false;
-//   }
-// });
-// G4 072425 End of Performance Item
-animate();
+animate(); // Start the animation
 
 	// GD5 Added handleWindowResize and Event Listener 053125 
 	function handleWindowResize() {
