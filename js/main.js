@@ -6,7 +6,7 @@ import PositionAlongPathState from '../js/positionAlongPathTools/PositionAlongPa
 import { handleScroll, updatePosition } from '../js/positionAlongPathTools/PositionAlongPathMethods.js'
 import { loadCurveFromJSON } from '../js/curveTools/CurveMethods.js'
 import { setupRenderer } from '../js/helpers/RendererHelper.js'
-import {IsMobile, IsTablet} from '../js/mobileCheck.js';
+import {IsMobile, IsTablet, screenPortrait} from '../js/mobileCheck.js';
 
 
 //G5 added 7/15 for unreal bloom pass on spline path
@@ -35,6 +35,22 @@ if (IsMobile) {
 } else {
   console.log(`Desktop Browser Detected`);
 }
+
+// G4 072825 - Change video assets to Portrait based on screen 
+if ('orientation' in screen) {
+  console.log("Current Orientation: "+screen.orientation.type);
+}
+
+const PreviewVideo = document.getElementById("myPreviewVideo");
+if (screenPortrait) {
+  PreviewVideo.src = "./TempPortrait.mp4";
+} else {
+  PreviewVideo.src = "./Sandev Test.mp4";
+}
+
+screen.orientation.addEventListener('change', () => {
+  window.location.reload();
+});
 
 //Open/Close Menu On Click
 let menuState = 0; //0 = Closed

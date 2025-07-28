@@ -14,5 +14,14 @@ window.mobileAndTabletCheck = function() {
   return check;
 };
 
+export let screenPortrait = ((screen.orientation.type == "portrait-primary") || (screen.orientation.type == "portrait-secondary"));
+
+export let screenLandscape = (screen.orientation.type == "landscape-primary");
+
+screen.orientation.addEventListener('change', () => {
+  screenPortrait = ((screen.orientation.type == "portrait-primary") || (screen.orientation.type == "portrait-secondary"));;
+  screenLandscape = (screen.orientation.type == "landscape-primary");
+});
+
 export const IsMobile = window.mobileCheck();
 export const IsTablet = window.mobileAndTabletCheck();
