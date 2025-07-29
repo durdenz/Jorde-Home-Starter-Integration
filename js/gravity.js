@@ -5,7 +5,7 @@ import { EffectComposer } from "jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "jsm/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "jsm/postprocessing/UnrealBloomPass.js";
 
-const w = window.innerWidth - 15; //GD5 Added this 7/5 because of window sizing issue
+const w = window.innerWidth; //GD5 Added this 7/5 because of window sizing issue
 const h = window.innerHeight;
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, w / h, 0.9, 1000);
