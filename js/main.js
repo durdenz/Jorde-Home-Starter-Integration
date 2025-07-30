@@ -378,7 +378,6 @@ async function setupScene() {
   
       // Simulate scroll delta for touchmove (if needed)
       let delta = 0;
-      let cF = (SplineCanvas.clientHeight / 100); // G4 072825 Touch Correction Factor
   
       if (event.type === 'wheel') {
         delta = event.deltaY;
@@ -389,7 +388,7 @@ async function setupScene() {
           return;
         }
         const currentY = event.touches[0].clientY;
-        delta = (onUserScroll.lastTouchY - currentY) * cF; // G4 072825 Touch correction Factor
+        delta = onUserScroll.lastTouchY - currentY;
         onUserScroll.lastTouchY = currentY;
       }
   
