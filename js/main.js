@@ -370,35 +370,44 @@ async function setupScene() {
   window.addEventListener('wheel', onUserScroll, { passive: true });
   window.addEventListener('touchmove', onUserScroll, { passive: true });
 
+  let lastScrollTime = 0; // Scroll timestamp for each scroll
+  const waitPeriod = .01; // Scroll Thottle speed in milliseconds
 
   function onUserScroll(event) {
     const SplineCanvasTop = SplineCanvas.getBoundingClientRect().top;
     if (SplineCanvasTop <= 0) {
-      console.log(`Scroll Triggered: SplineCanvas.top = ${SplineCanvasTop}`);
+      // console.log(`Scroll Triggered: SplineCanvas.top = ${SplineCanvasTop}`);
   
       // Simulate scroll delta for touchmove (if needed)
       let delta = 0;
   
       if (event.type === 'wheel') {
+        console.log(`wheel`);
         delta = event.deltaY;
       } else if (event.type === 'touchmove') {
-        // Store previous touch Y
-        if (typeof onUserScroll.lastTouchY !== 'number') {
-          onUserScroll.lastTouchY = event.touches[0].clientY;
-          return;
-        }
-        const currentY = event.touches[0].clientY;
-        delta = onUserScroll.lastTouchY - currentY;
-        onUserScroll.lastTouchY = currentY;
+        console.log(`touchmove`);
+        const cTime = Date.now();
+
+        // Apply Throtting to avoid surge in scroll events on mobile touch
+        if (cTime - lastScrollTime >= waitPeriod) {
+          lastScrollTime = cTime;
+
+          // Store previous touch Y
+          if (typeof onUserScroll.lastTouchY !== 'number') {
+            onUserScroll.lastTouchY = event.touches[0].clientY;
+            return;
+          }
+          const currentY = event.touches[0].clientY;
+          delta = onUserScroll.lastTouchY - currentY;
+          onUserScroll.lastTouchY = currentY;
+        } else { return; } // Don't process scroll if waitPeriod not met
       }
   
       // Simulate a synthetic event with a deltaY
+      console.log(`handleScroll: delta = ${delta}`);
       handleScroll({ deltaY: delta }, positionAlongPathState);
     }
   }
-  
-
-	// G4 062925 End of Changes
 
 	// G4 Beginning of Changes for Animation
 	const clock = new THREE.Clock();
