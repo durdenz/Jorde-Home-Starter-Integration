@@ -371,7 +371,7 @@ async function setupScene() {
   window.addEventListener('touchmove', onUserScroll, { passive: true });
 
   let lastScrollTime = 0; // Scroll timestamp for each scroll
-  const waitPeriod = .01; // Scroll Thottle speed in milliseconds
+  const waitPeriod = .50; // Scroll Thottle speed in milliseconds
 
   function onUserScroll(event) {
     const SplineCanvasTop = SplineCanvas.getBoundingClientRect().top;
